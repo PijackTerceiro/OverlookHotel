@@ -50,4 +50,8 @@ public class Date
         && obj.getYear() == year;
   }
 
+  public String toString()
+  {
+    return "Date{" + "day=" + day + ", month=" + month + ", year=" + year + '}';
+  }
 }

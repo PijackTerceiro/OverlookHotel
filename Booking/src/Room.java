@@ -12,4 +12,10 @@ public class Room
     this.roomNum = roomNum;
     this.isBooked = false;
   }
+
+  @Override public String toString()
+  {
+    return "Room{" + "price=" + price + ", beds=" + beds + ", roomNum="
+        + roomNum + ", isBooked=" + isBooked + '}';
+  }
 }
