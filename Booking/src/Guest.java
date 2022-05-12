@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Guest
 {
   //Fields
@@ -83,5 +85,21 @@ public class Guest
     return "Guest{" + "first name='" + firstName + '\'' + ", last name='"
         + lastName + '\'' + ", nationality='" + nationality + '\'' + ", telephone number="
         + telNum + ", birthday=" + birthday + '}';
+  }
+  //=======================
+
+  //EqualMethod
+  //=======================
+  @Override public boolean equals(Object o)
+  {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    Guest guest = (Guest) o;
+    return telNum == guest.telNum && Objects.equals(firstName, guest.firstName)
+        && Objects.equals(lastName, guest.lastName) && Objects.equals(
+        nationality, guest.nationality) && Objects.equals(birthday,
+        guest.birthday);
   }
 }
