@@ -7,6 +7,7 @@ public class BookingTest
     Date checkOut1 = new Date(17,2,2022);
     Guest guest1 = new Guest("Steen", "Kroyer","DK", birthday1,4545677);
     Room room1 = new Room(300,2,412);
+
     Reservation booking1 = new Reservation(guest1,checkIn1,checkOut1,room1);
 
     System.out.println(booking1);

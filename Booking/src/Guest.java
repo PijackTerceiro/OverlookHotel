@@ -78,28 +78,28 @@ public class Guest
   }
   //=======================
 
-  //toString
-  //=======================
-  @Override public String toString()
-  {
-    return "Guest{" + "first name='" + firstName + '\'' + ", last name='"
-        + lastName + '\'' + ", nationality='" + nationality + '\'' + ", telephone number="
-        + telNum + ", birthday=" + birthday + '}';
-  }
-  //=======================
-
   //EqualMethod
   //=======================
-  @Override public boolean equals(Object o)
+  public boolean equals(Object obj)
   {
-    if (this == o)
+    if (this == obj)
       return true;
-    if (o == null || getClass() != o.getClass())
+    if (obj == null || getClass() != obj.getClass())
       return false;
-    Guest guest = (Guest) o;
+    Guest guest = (Guest) obj;
     return telNum == guest.telNum && Objects.equals(firstName, guest.firstName)
         && Objects.equals(lastName, guest.lastName) && Objects.equals(
         nationality, guest.nationality) && Objects.equals(birthday,
         guest.birthday);
   }
+  //toString
+  //=======================
+  public String toString()
+  {
+    return "Guest:\n" + firstName + ", " + lastName +
+        "\n" + nationality +
+        "\n" + telNum +
+        "\n" + birthday;
+  }
+  //=======================
 }
