@@ -14,18 +14,20 @@ public class Reservation
     this.checkOut = checkOut;
     this.room = room;
   }
-  public boolean isUnderage(Date birthday)
+  public boolean isUnderage(Guest guest)
   {
-    int age;
-    if (GregorianCalendar.MONTH < birthday.getMonth())
-      age = 1 + GregorianCalendar.YEAR - birthday.getYear();
-    if (GregorianCalendar.MONTH == birthday.getMonth())
+    int age = 0;
+    if (GregorianCalendar.MONTH < guest.getBirthday().getMonth())
+      age = 1 + GregorianCalendar.YEAR - guest.getBirthday().getYear();
+    if (GregorianCalendar.DAY_OF_MONTH == guest.getBirthday().getMonth())
     {
-      if (GregorianCalendar.DATE <= birthday.getDate())
-        age = 2 + GregorianCalendar.YEAR - birthday.getYear();
+      if (GregorianCalendar.DATE <= guest.getBirthday().getDay())
+        age = 2 + GregorianCalendar.YEAR - guest.getBirthday().getYear();
     }
     if (age >= 18)
-    {       return true;     }
-    else       return false;
+    {
+      return true;
+    }else
+      return false;
   }
 }
