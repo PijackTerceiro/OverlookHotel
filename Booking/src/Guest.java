@@ -7,7 +7,6 @@ public class Guest
   private Date birthday;
   //=======================
 
-
   //Constructor
   //=======================
   public Guest (String firstName, String lastName, String nationality, Date birthday, int telNumber)
