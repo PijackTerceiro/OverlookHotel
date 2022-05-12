@@ -1,9 +1,9 @@
 public class Guest
 {
   //Fields
-  String firstName, lastName, nationality;
-  int telNum;
-  Date birthday;
+  private String firstName, lastName, nationality;
+  private int telNum;
+  private Date birthday;
 
   //Constructor
   Guest (String firstName, String lastName, String nationality, Date birthday, int telNumber)
