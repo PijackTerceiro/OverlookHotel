@@ -30,4 +30,10 @@ public class Reservation
     }else
       return false;
   }
+
+  @Override public String toString()
+  {
+    return "Reservation{" + "guest=" + guest + ", checkIn=" + checkIn
+        + ", checkOut=" + checkOut + ", room=" + room + '}';
+  }
 }
