@@ -35,8 +35,7 @@ public class Reservation
   @Override public String toString()
   {
     return "Reservation: " + "\n" + guest + "\n"
-       // + "\nExpected arrival: " + checkIn
-    +
+        + "\nExpected arrival: " + checkIn +
         "\nExpected departure: " + checkOut + "\n" +
         "\nAccomodation: " + room ;
   }
