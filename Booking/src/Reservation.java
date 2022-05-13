@@ -26,6 +26,7 @@ public class Reservation
     }
     if (age >= 18)
     {
+      // sth
       return true;
     }else
       return false;
@@ -33,8 +34,8 @@ public class Reservation
 
   @Override public String toString()
   {
-    return "Reservation: " + "\n" + guest + "\n" +
-        "\nExpected arrival: " + checkIn +
+    return "Reservation: " + "\n" + guest + "\n"
+        + "\nExpected arrival: " + checkIn +
         "\nExpected departure: " + checkOut + "\n" +
         "\nAccomodation: " + room ;
   }
