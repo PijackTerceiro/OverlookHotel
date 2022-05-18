@@ -16,20 +16,33 @@ public class Reservation
   }
   public boolean isUnderage(Guest guest)
   {
-    int age = 0;
-    if (GregorianCalendar.MONTH < guest.getBirthday().getMonth())
-      age = 1 + GregorianCalendar.YEAR - guest.getBirthday().getYear();
-    if (GregorianCalendar.DAY_OF_MONTH == guest.getBirthday().getMonth())
     {
-      if (GregorianCalendar.DATE <= guest.getBirthday().getDay())
-        age = 2 + GregorianCalendar.YEAR - guest.getBirthday().getYear();
-    }
-    if (age >= 18)
-    {
-      // sth
+      GregorianCalendar currentDate = new GregorianCalendar();
+      int age = currentDate.get(GregorianCalendar.YEAR) - guest.getBirthday().getYear();
+
+      if (age >= 18)
+      {
+
+        if (currentDate.get(GregorianCalendar.MONTH) + 1 < guest.getBirthday()
+            .getMonth())
+          age = currentDate.get(GregorianCalendar.YEAR) - (1 + guest.getBirthday().getYear());
+
+        if (currentDate.get(GregorianCalendar.MONTH) + 1
+            == guest.getBirthday().getMonth())
+        {
+
+          if (currentDate.get(GregorianCalendar.DATE) <= guest.getBirthday().getDay())
+            age = currentDate.get(GregorianCalendar.YEAR) - (1 + guest.getBirthday().getYear());
+        }
+        if (age >= 18)
+        {
+          return false;
+        }
+        else
+          return true;
+      }
       return true;
-    }else
-      return false;
+    }
   }
 
   @Override public String toString()
