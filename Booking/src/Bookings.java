@@ -13,4 +13,10 @@ public class Bookings
   {
     reservations.add(reservation);
   }
+
+  //isAvailable
+  public boolean equals(Date checkIn, Date checkOut)
+  {
+
+  }
 }
