@@ -7,51 +7,36 @@ public class Reservation
   private Date checkOut;
   private Room room;
 
-  public Reservation(Guest guest, Date checkIn, Date checkOut, Room room)
+  public Reservation(Guest guest,Date checkIn, Date checkOut, Room room)
   {
     this.guest = guest;
     this.checkIn = checkIn;
     this.checkOut = checkOut;
     this.room = room;
   }
-
   public boolean isUnderage(Guest guest)
   {
-    GregorianCalendar currentDate = new GregorianCalendar();
-    int age =
-        currentDate.get(GregorianCalendar.YEAR) - guest.getBirthday().getYear();
-
+    int age = 0;
+    if (GregorianCalendar.MONTH < guest.getBirthday().getMonth())
+      age = 1 + GregorianCalendar.YEAR - guest.getBirthday().getYear();
+    if (GregorianCalendar.DAY_OF_MONTH == guest.getBirthday().getMonth())
+    {
+      if (GregorianCalendar.DATE <= guest.getBirthday().getDay())
+        age = 2 + GregorianCalendar.YEAR - guest.getBirthday().getYear();
+    }
     if (age >= 18)
     {
-
-      if (currentDate.get(GregorianCalendar.MONTH) + 1 < guest.getBirthday()
-          .getMonth())
-        age = currentDate.get(GregorianCalendar.YEAR) - (1 + guest.getBirthday()
-            .getDay());
-
-      if (currentDate.get(GregorianCalendar.MONTH) + 1 == guest.getBirthday()
-          .getMonth())
-      {
-
-        if (currentDate.get(GregorianCalendar.DATE) <= guest.getBirthday()
-            .getDay())
-          age =
-              currentDate.get(GregorianCalendar.YEAR) - (1 + guest.getBirthday()
-                  .getDay());
-      }
-      if (age >= 18)
-      {
-        return false;
-      }
-      else
-        return true;
-    }
-    return true;
+      // sth
+      return true;
+    }else
+      return false;
   }
 
   @Override public String toString()
   {
-    return "Reservation{" + "guest=" + guest + ", checkIn=" + checkIn
-        + ", checkOut=" + checkOut + ", room=" + room + '}';
+    return "Reservation: " + "\n" + guest + "\n"
+        + "\nExpected arrival: " + checkIn +
+        "\nExpected departure: " + checkOut + "\n" +
+        "\nAccomodation: " + room ;
   }
 }

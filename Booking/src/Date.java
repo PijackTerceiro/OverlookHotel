@@ -9,6 +9,12 @@ public class Date
     this.year = year;
   }
 
+  public void setDate(int day, int month, int year)
+  {
+    this.day = day;
+    this.month = month;
+    this.year = year;
+  }
   public void setDay(int day)
   {
     this.day = day;
@@ -52,6 +58,6 @@ public class Date
 
   public String toString()
   {
-    return "Date{" + "day=" + day + ", month=" + month + ", year=" + year + '}';
+    return day + "/" + month + "/" + year;
   }
 }

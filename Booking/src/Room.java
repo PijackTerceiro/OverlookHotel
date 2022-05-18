@@ -15,7 +15,11 @@ public class Room
 
   @Override public String toString()
   {
-    return "Room{" + "price=" + price + ", beds=" + beds + ", roomNum="
-        + roomNum + ", isBooked=" + isBooked + '}';
+    return
+        "\nRoom number: " + roomNum +
+        "\nprice: " + price +
+        "\nNumber of beds: " + beds +
+        "\nStatus: " + isBooked;
   }
 }
+

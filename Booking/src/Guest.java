@@ -96,10 +96,10 @@ public class Guest
   //=======================
   public String toString()
   {
-    return "Guest:\n" + firstName + ", " + lastName +
-        "\n" + nationality +
-        "\n" + telNum +
-        "\n" + birthday;
+    return "Full name: " + firstName + ", " + lastName +
+        "\nNationality: " + nationality +
+        "\nPhone number: " + telNum +
+        "\nDate of birth: " + birthday;
   }
   //=======================
 }
