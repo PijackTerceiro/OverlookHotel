@@ -1,4 +1,5 @@
 import java.util.GregorianCalendar;
+import java.util.Date;
 
 public class Reservation
 {
@@ -43,6 +44,22 @@ public class Reservation
       }
       return true;
     }
+  }
+
+  //Methods to check the availability.
+  public Date getCheckIn()
+  {
+    return checkIn;
+  }
+
+  public Date getCheckOut()
+  {
+    return checkOut;
+  }
+
+  public Room getRoom()
+  {
+    return room;
   }
 
   @Override public String toString()
