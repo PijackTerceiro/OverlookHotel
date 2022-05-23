@@ -39,4 +39,9 @@ public class Hotel
 
     }
   }
+
+  public void createBooking(ArrayList<Room> availableRooms)
+  {
+
+  }
 }
