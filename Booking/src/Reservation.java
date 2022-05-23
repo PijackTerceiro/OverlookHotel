@@ -62,6 +62,7 @@ public class Reservation
     return room;
   }
 
+
   @Override public String toString()
   {
     return "Reservation: " + "\n" + guest + "\n"
