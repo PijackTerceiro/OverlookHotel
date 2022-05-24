@@ -6,15 +6,12 @@ public class BookingTest
     Date checkIn1 = new Date(13,2,2022);
     Date checkOut1 = new Date(17,2,2022);
     Guest guest1 = new Guest("Facundo", "Pagano","AR", birthday1,4545677);
-    Room room1 = new Room(300,2,412);
+
 
     checkIn1.setDate(18,4,2022);
     birthday1.setYear(2004);
 
-    Reservation booking1 = new Reservation(guest1,checkIn1,checkOut1,room1);
+    RoomsModelManager initialData = new RoomsModelManager("rooms file.txt");
 
-    System.out.println(booking1);
-
-    System.out.println(booking1.isUnderage(guest1));
   }
 }

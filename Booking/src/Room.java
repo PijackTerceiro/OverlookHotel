@@ -1,16 +1,30 @@
+import java.util.Set;
+
 public class Room
 {
-  private int price;
-  private int beds;
+  private String type;
   private int roomNum;
-  private boolean isBooked;
+  private int beds;
+  private int price;
+  private boolean availability;
 
-  public Room(int price, int bedNum, int roomNum)
+  public Room()
   {
+    type = null;
+    price = 0;
+    beds = 0;
+    roomNum = 0;
+    availability = false;
+
+  }
+
+  public Room(String type, int roomNum, int beds, int price, boolean availability)
+  {
+    this.type = type;
     this.price = price;
-    this.beds = bedNum;
+    this.beds = beds;
     this.roomNum = roomNum;
-    this.isBooked = false;
+    this.availability = false;
   }
 
   @Override public String toString()
@@ -19,7 +33,7 @@ public class Room
         "\nRoom number: " + roomNum +
         "\nprice: " + price +
         "\nNumber of beds: " + beds +
-        "\nStatus: " + isBooked;
+        "\nStatus: " + availability;
   }
 }
 
