@@ -11,13 +11,14 @@ public class Hotel
   public Hotel() {}
 
   //addReservation
-  public void addReservations(Reservation reservation)
+  public void addReservations(Reservation reservation, int index)
   {
     reservations.add(reservation);
+    reservation.getRoom(index).isBooked(reservation.getRoom(index));
   }
 
   //isAvailable
-  public Set<Room> isAvailable(Date checkIn, Date checkOut)
+  public Set<Room> isAvailable(Date checkIn, Date checkOut, Reservation reservation)
   {
     Set<Room> availableRooms = new HashSet<>();
 
@@ -27,12 +28,13 @@ public class Hotel
       //This loop checks through all the reservations comparing dates and will add to the availableRooms set the available room.
       //If check in input is after check-out in reservation or check out input is before check-in in reservation.
       if (checkIn.after(reservations.get(i).getCheckOut()) || checkOut.before(
-          reservations.get(i).getCheckIn()))
+          reservations.get(i).getCheckIn())||reservation.getRoom(i).getStatus()==true)
       {
         //This will add only the room in the availableRooms set
-        availableRooms.add(reservations.get(i).getRoom());
+        availableRooms.add(reservations.get(i).getRoom(i));
       }
     }
+    return availableRooms;
   }
 
   public void createBooking(Set<Room> availableRooms)

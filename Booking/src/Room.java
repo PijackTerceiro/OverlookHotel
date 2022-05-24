@@ -27,6 +27,23 @@ public class Room
     this.availability = false;
   }
 
+  public void isBooked(Room room)
+  {
+    availability=true;
+  }
+
+  public boolean getStatus()
+  {
+    if(availability==true)
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
+
   @Override public String toString()
   {
     return
