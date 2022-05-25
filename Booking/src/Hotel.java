@@ -11,13 +11,6 @@ public class Hotel
   //Constructor
   public Hotel() {}
 
-  //addReservation
-  public void addReservations(Reservation reservation, int index)
-  {
-    reservations.add(reservation);
-    roomList.get(index).isBooked();
-  }
-
   //isAvailable
   public Set<Room> isAvailable(Date checkIn, Date checkOut, Reservation reservation)
   {
@@ -45,8 +38,11 @@ public class Hotel
     return availableRooms;
   }
 
-  public void createBooking(Set<Room> availableRooms)
+  public void createBooking(Room room, Guest guest, Date checkIn, Date checkOut)
   {
 
+    Reservation reservation = new Reservation(guest, checkIn, checkOut, room);
+    reservations.add(reservation);
+    roomList.get(room.getRoomNum()).isBooked();
   }
 }
