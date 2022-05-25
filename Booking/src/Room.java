@@ -44,6 +44,11 @@ public class Room
     }
   }
 
+  public int getRoomNum()
+  {
+    return roomNum;
+  }
+
   @Override public String toString()
   {
     return
