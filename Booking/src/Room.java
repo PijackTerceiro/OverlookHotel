@@ -52,6 +52,7 @@ public class Room
   @Override public String toString()
   {
     return
+        "\nType of room: " + type +
         "\nRoom number: " + roomNum +
         "\nprice: " + price +
         "\nNumber of beds: " + beds +
