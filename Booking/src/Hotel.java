@@ -14,6 +14,7 @@ public class Hotel
     this.roomList=roomList;
   }
 
+
   //isAvailable
   public ArrayList<Room> isAvailable(Date checkIn, Date checkOut)
   {
