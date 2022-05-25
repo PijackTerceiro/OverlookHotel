@@ -18,7 +18,7 @@ public class Room
 
   }
 
-  public Room(String type, int roomNum, int beds, int price, boolean availability)
+  public Room(String type, int roomNum, int beds, int price)
   {
     this.type = type;
     this.price = price;

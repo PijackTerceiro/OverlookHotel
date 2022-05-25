@@ -5,13 +5,13 @@ public class Guest
   //Fields
   //=======================
   private String firstName, lastName, nationality;
-  private int telNum;
+  private long telNum;
   private Date birthday;
   //=======================
 
   //Constructor
   //=======================
-  public Guest (String firstName, String lastName, String nationality, Date birthday, int telNumber)
+  public Guest (String firstName, String lastName, String nationality, Date birthday, long telNumber)
   {
     this.firstName=firstName;
     this.lastName=lastName;
@@ -67,7 +67,7 @@ public class Guest
     return birthday;
   }
 
-  public int getTelNum()
+  public long getTelNum()
   {
     return telNum;
   }
@@ -96,10 +96,10 @@ public class Guest
   //=======================
   public String toString()
   {
-    return "Full name: " + firstName + ", " + lastName +
+    return "\nFull name: " + firstName + ", " + lastName +
         "\nNationality: " + nationality +
         "\nPhone number: " + telNum +
-        "\nDate of birth: " + birthday;
+        "\nDate of birth: " + birthday ;
   }
   //=======================
 }

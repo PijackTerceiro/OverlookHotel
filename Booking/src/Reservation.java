@@ -4,18 +4,25 @@ import java.util.Date;
 
 public class Reservation
 {
-  private Guest guest;
+  private ArrayList<Guest> guests = new ArrayList<>();
+  private Guest mainGuest;
   private Date checkIn;
   private Date checkOut;
   private Room room;
 
-  public Reservation(Guest guest,Date checkIn, Date checkOut, Room room)
+  public Reservation(Guest guest, Date checkIn, Date checkOut, Room room)
   {
-    this.guest = guest;
+    mainGuest = guest;
     this.checkIn = checkIn;
     this.checkOut = checkOut;
     this.room = room;
   }
+
+  public void addGuests(Guest guest)
+  {
+    guests.add(guest);
+  }
+
   public boolean isUnderage(Guest guest)
   {
     {
@@ -66,8 +73,8 @@ public class Reservation
 
   @Override public String toString()
   {
-    return "Reservation: " + "\n" + guest + "\n"
-        + "\nExpected arrival: " + checkIn +
+    return "\nReservation:" + "\nMain Guest " + mainGuest + "\n"
+        + guests + "\nExpected arrival: " + checkIn +
         "\nExpected departure: " + checkOut + "\n" +
         "\nAccomodation: " + room ;
   }
