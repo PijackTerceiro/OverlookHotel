@@ -24,23 +24,23 @@ public class Room
     this.price = price;
     this.beds = beds;
     this.roomNum = roomNum;
-    this.availability = false;
+    this.availability = true;
   }
 
-  public void isBooked(Room room)
+  public void isBooked()
   {
-    availability=true;
+    availability=false;
   }
 
   public boolean getStatus()
   {
     if(availability==true)
     {
-      return false;
+      return true;
     }
     else
     {
-      return true;
+      return false;
     }
   }
 

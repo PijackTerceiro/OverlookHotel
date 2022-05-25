@@ -8,7 +8,6 @@ public class Reservation
   private Date checkIn;
   private Date checkOut;
   private Room room;
-  private ArrayList<Room> list = new ArrayList<>(37);
 
   public Reservation(Guest guest,Date checkIn, Date checkOut, Room room)
   {
@@ -59,9 +58,9 @@ public class Reservation
     return checkOut;
   }
 
-  public Room getRoom(int index)
+  public Room getRoom()
   {
-    return list.get(index);
+    return room;
   }
 
 
