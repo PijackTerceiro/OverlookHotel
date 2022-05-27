@@ -1,3 +1,5 @@
+package OverlookPackage;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,7 +8,6 @@ import java.util.Scanner;
 
 public class MyFileHandler
 {
-
   public void writeToTextFile(String str, String filename)
   {
     try
@@ -22,7 +23,6 @@ public class MyFileHandler
       e.printStackTrace();
     }
   }
-
   public String readFromTextFile(String fileName)
   {
 

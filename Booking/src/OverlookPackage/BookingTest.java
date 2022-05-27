@@ -1,3 +1,5 @@
+package OverlookPackage;
+
 import java.util.ArrayList;
 
 public class BookingTest
@@ -40,10 +42,6 @@ public class BookingTest
     rooms.add(suite1);
     rooms.add(suite2);
 
-
-
-
-
     Date checkInRes1 = new Date(13,6,2022);
     Date checkOutRes1 = new Date(17,6,2022);
     Date checkInRes2 = new Date(21,6,2022);
@@ -65,9 +63,6 @@ public class BookingTest
     hotel.createBooking(11, guest1, checkInRes1, checkOutRes1);
     hotel.createBooking(6,guest3,checkInRes2,checkOutRes2);
     System.out.println(hotel.isAvailable(checkInRes3,checkOutRes3));
-
-
-
 
     /*Reservation res2 = new Reservation();
     Reservation res3 = new Reservation();
