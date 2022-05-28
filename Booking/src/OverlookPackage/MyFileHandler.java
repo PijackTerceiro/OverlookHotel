@@ -59,13 +59,13 @@ public class MyFileHandler
     return "Reading done";
   }
 
-  public void writeToBinaryFile(Object obj, String fileName)
+  public void writeToBinaryFile(Date date, String fileName)
   {
     try
     {
       FileOutputStream fileOut = new FileOutputStream(fileName, true);
       ObjectOutputStream write = new ObjectOutputStream(fileOut);
-      write.writeObject(obj);
+      write.writeObject(date);
       write.close();
 
     }
@@ -81,8 +81,42 @@ public class MyFileHandler
     }
   }
 
-  /*public Object readFromBinaryFile(String fileName)
+  public Object readFromBinaryFile(String fileName)
   {
-
-  }*/
+    try
+    {
+      FileInputStream fileIn = new FileInputStream(fileName);
+      ObjectInputStream read = new ObjectInputStream(fileIn);
+      while (true)
+      {
+        try
+        {
+          Date date = (Date) read.readObject();
+          System.out.println(date);
+        }
+        catch (EOFException eof)
+        {
+          System.out.println("End of file");
+          break;
+        }
+      }
+      read.close();
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found, or could not be opened");
+      System.exit(1);
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error reading file");
+      System.exit(1);
+    }
+    catch (ClassNotFoundException e)
+    {
+      System.out.println("Class Not Found");
+      System.exit(1);
+    }
+    return "End of the file";
+  }
 }
