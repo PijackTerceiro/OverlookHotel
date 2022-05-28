@@ -1,14 +1,17 @@
 package OverlookPackage;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Set;
 
-public class Room
+public class Room implements Serializable
 {
   private String type;
   private int roomNum;
   private int beds;
   private int price;
-  private boolean availability;
+  private boolean isInReservation;
 
   public Room()
   {
@@ -16,34 +19,56 @@ public class Room
     price = 0;
     beds = 0;
     roomNum = 0;
-    availability = false;
-
+    isInReservation = false;
   }
 
-  public Room(String type, int roomNum, int beds, int price)
+  public Room(String type, int roomNum, int beds, int price, boolean isInReservation)
   {
     this.type = type;
     this.price = price;
     this.beds = beds;
     this.roomNum = roomNum;
-    this.availability = true;
+    this.isInReservation = isInReservation;
   }
 
-  public void isBooked()
+  public void setPrice(int price)
   {
-    availability=false;
+    this.price = price;
   }
 
-  public boolean getStatus()
+  public void setBeds(int beds)
   {
-    if(availability==true)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
+    this.beds = beds;
+  }
+
+  public void setType(String type)
+  {
+    this.type = type;
+  }
+
+  public void setRoomNum(int roomNum)
+  {
+    this.roomNum = roomNum;
+  }
+
+  public int getPrice()
+  {
+    return price;
+  }
+
+  public String getType()
+  {
+    return type;
+  }
+
+  public boolean getIsInReservation()
+  {
+    return isInReservation;
+  }
+
+  public int getBeds()
+  {
+    return beds;
   }
 
   public int getRoomNum()
@@ -58,7 +83,7 @@ public class Room
         "\nRoom number: " + roomNum +
         "\nprice: " + price +
         "\nNumber of beds: " + beds +
-        "\nStatus: " + availability;
+        "\nHas been booked: " + isInReservation;
   }
 }
 

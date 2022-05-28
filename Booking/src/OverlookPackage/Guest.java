@@ -1,8 +1,9 @@
 package OverlookPackage;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Guest
+public class Guest implements Serializable
 {
   //Fields
   //=======================

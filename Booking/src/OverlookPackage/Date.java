@@ -1,20 +1,28 @@
 package OverlookPackage;
-public class Date extends java.util.Date
+
+import java.io.Serializable;
+
+public class Date extends java.util.Date implements Serializable
 {
   private int day, month, year;
 
+  public Date()
+  {
+    month = month-1;
+    year = year-1900;
+  }
   public Date(int day, int month, int year)
   {
     this.day = day;
-    this.month = month;
-    this.year = year;
+    this.month = month-1;
+    this.year = year-1900;
   }
 
   public void setDate(int day, int month, int year)
   {
     this.day = day;
-    this.month = month;
-    this.year = year;
+    this.month = month-1;
+    this.year = year-1900;
   }
   public void setDay(int day)
   {
@@ -23,12 +31,12 @@ public class Date extends java.util.Date
 
   public void setMonth(int month)
   {
-    this.month = month;
+    this.month = month-1;
   }
 
   public void setYear(int year)
   {
-    this.year = year;
+    this.year = year-1900;
   }
 
   public int getDay()

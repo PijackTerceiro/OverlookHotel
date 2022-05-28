@@ -1,12 +1,13 @@
 package OverlookPackage;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Date;
 
-public class Reservation
+public class Reservation implements Serializable
 {
-  private ArrayList<Guest> guests = new ArrayList<>();
+  private ArrayList<Guest> guests;
   private Guest mainGuest;
   private Date checkIn;
   private Date checkOut;
@@ -20,12 +21,9 @@ public class Reservation
     this.room = room;
   }
 
-  public void addGuests(Guest guest)
-  {
-    guests.add(guest);
-  }
 
-  public boolean isUnderage(Guest guest)
+
+  /*public boolean isUnderage(Guest guest)
   {
     {
       GregorianCalendar currentDate = new GregorianCalendar();
@@ -54,7 +52,7 @@ public class Reservation
       }
       return true;
     }
-  }
+  }*/
 
   //Methods to check the availability.
   public Date getCheckIn()
@@ -72,12 +70,37 @@ public class Reservation
     return room;
   }
 
+  public Guest getMainGuest()
+  {
+    return mainGuest;
+  }
+
+  public void setMainGuest(Guest mainGuest)
+  {
+    this.mainGuest=mainGuest;
+  }
+
+  public void setCheckIn(Date checkIn)
+  {
+    this.checkIn=checkIn;
+  }
+
+  public void setCheckOut(Date checkOut)
+  {
+    this.checkOut=checkOut;
+  }
+
+  public void setRoom(Room room)
+  {
+    this.room=room;
+  }
+
 
   @Override public String toString()
   {
     return "\nReservation:" + "\nMain Guest " + mainGuest + "\n"
         + guests + "\nExpected arrival: " + checkIn +
         "\nExpected departure: " + checkOut + "\n" +
-        "\nAccomodation: " + room ;
+        "\nAccommodation: " + room ;
   }
 }
