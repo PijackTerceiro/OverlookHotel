@@ -66,6 +66,11 @@ public class Room implements Serializable
     return isInReservation;
   }
 
+  public void setInReservation(boolean isInReservation)
+  {
+    this.isInReservation = isInReservation;
+  }
+
   public int getBeds()
   {
     return beds;
