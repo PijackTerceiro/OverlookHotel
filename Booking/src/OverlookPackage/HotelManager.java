@@ -9,4 +9,5 @@ public class HotelManager
     this.fileName = fileName;
   }
 
+
 }
