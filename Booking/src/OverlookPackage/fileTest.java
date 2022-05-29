@@ -6,8 +6,12 @@ public class fileTest implements Serializable
 {
   public static void main(String[] args)
   {
-    MyFileHandler fileHandler = new MyFileHandler();
     String fileName = "C:\\Users\\34654\\Documents\\GitHub\\OverlookHotel\\Booking\\src\\resources\\roomsFile.xml";
-    fileHandler.readXmlFile(fileName);
+    HotelManager hotelManager = new HotelManager();
+    RoomList rooms = new RoomList();
+    rooms = hotelManager.getAllRooms(fileName);
+    System.out.println(rooms.getRoomByNumber(2));
+
+
   }
 }
