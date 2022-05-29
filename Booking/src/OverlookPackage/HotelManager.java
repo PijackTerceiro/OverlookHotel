@@ -9,8 +9,4 @@ public class HotelManager
     this.fileName = fileName;
   }
 
-  //public RoomList getAllRooms()
-  {
-
-  }
 }

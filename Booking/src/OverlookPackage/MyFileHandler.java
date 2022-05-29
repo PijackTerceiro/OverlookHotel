@@ -147,7 +147,7 @@ public class MyFileHandler
     for (int itr = 0; itr < nodeList.getLength(); itr++)
     {
       Node node = nodeList.item(itr);
-      System.out.println("\nNode Name :" + node.getNodeName());
+      System.out.println("\n");
       if (node.getNodeType() == Node.ELEMENT_NODE)
       {
         Element eElement = (Element) node;
