@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Set;
 
+
 public class Room implements Serializable
 {
   private String type;
